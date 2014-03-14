@@ -181,7 +181,8 @@ module Stripe
     end
 
     def respond_to_missing?(symbol, include_private = false)
-      @values.has_key?(symbol) || super
+      #@values.has_key?(symbol) || super
+      @values && @values.has_key?(symbol) || super
     end
   end
 end
